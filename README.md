@@ -113,12 +113,12 @@ directory. The intention is to abstract this API via a dependency the
 `server` project includes, separating concerns.
 
 This client uses Jackson annotated model clases (package
-`com.mgl.xteam.dawps.client.model`) and uses the RestEasy Proxy Client
+`com.mgl.demo.popularpurchases.dawps.client.model`) and uses the RestEasy Proxy Client
 feature to build a REST client for the DAW API from the JAX-RS spec.
-in `com.mgl.xteam.dawps.client.ApiSpec`.
+in `com.mgl.demo.popularpurchases.dawps.client.ApiSpec`.
 
 The core class in this project is
-`com.mgl.xteam.dawps.client.DawPurchasesClient`. This also configures
+`com.mgl.demo.popularpurchases.dawps.client.DawPurchasesClient`. This also configures
 the underlying HTTP client with sensible defaults that could be
 however made configurable as desired.
 
@@ -140,21 +140,21 @@ client just explained.
 
 The most relevant classes are:
 
-- `com.mgl.xteam.server.rest.PopularPurchasesResource`: This is the
+- `com.mgl.demo.popularpurchases.server.rest.PopularPurchasesResource`: This is the
   endpoint JAX-RS implementation. It is basically designed to deal
   with the REST exposure and calls the _service_ below for the
   _business_ logic. It also deals with HTTP cache including an `ETag`
   response header whose value can be used for further client calls via a
   `If-None-Match` request header.
 
-- `com.mgl.xteam.server.service.PopularPurchasesService`: This class
+- `com.mgl.demo.popularpurchases.server.service.PopularPurchasesService`: This class
   implements the core functionality that ends up being exposed in the
   REST resource above. I am making an extense use of Java 8 features
   such as lambdas and streams. Also, in order to perform paralell
   operations, I am using Java 8's `CompletableFuture` (a _promises-_
   like API) together with Java EE 7's `ManagedExecutorService`.
 
-- `com.mgl.xteam.server.service.CacheAwareDawPurchasesClient`: This is
+- `com.mgl.demo.popularpurchases.server.service.CacheAwareDawPurchasesClient`: This is
   a CDI bean that decorates the API client explained before so that it
   has caching features. Calls to the delegated client are intercepted
   using JCache API features (`@CacheResult` and
@@ -163,7 +163,7 @@ The most relevant classes are:
   ships support out-of-the-box.
 
 - Selectively mapping method call exceptions into HTTP response codes
-  is made via the `com.mgl.xteam.server.rest.*ExceptionMapper` classes
+  is made via the `com.mgl.demo.popularpurchases.server.rest.*ExceptionMapper` classes
   again using JAX-RS features.
 
 # Appoach #2: Vert.x Based Solution
@@ -193,7 +193,7 @@ richer data model I would certainly use dedicated model classes just
 like for the Java EE solution.
 
 The most relevant (and almost single) piece of code here is
-`com.mgl.xteam.vertx.RecentPurchasesHandler`. It all starts at its
+`com.mgl.demo.popularpurchases.vertx.RecentPurchasesHandler`. It all starts at its
 only publid method `void handle(RoutingContext routingContext)`. The
 code leverages Vert.x's async nature to accomplish paralell requests.
 Also, I decided to use the alternative RxJava oriented platform API
