@@ -194,7 +194,7 @@ like for the Java EE solution.
 
 The most relevant (and almost single) piece of code here is
 `com.mgl.demo.popularpurchases.vertx.RecentPurchasesHandler`. It all starts at its
-only publid method `void handle(RoutingContext routingContext)`. The
+only public method `void handle(RoutingContext routingContext)`. The
 code leverages Vert.x's async nature to accomplish paralell requests.
 Also, I decided to use the alternative RxJava oriented platform API
 instead of the classical callback. So every async operation (API
