@@ -106,7 +106,7 @@
                 <configuration>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <!-- I have Integration Tests that require a running server. -->
-                    <arguments>-DskipTests=true</arguments>
+                    <arguments>-DskipTests=true -Dmaven.deploy.skip=true</arguments>
                     <tagNameFormat>v@{project.version}</tagNameFormat>
                 </configuration>
             </plugin>
