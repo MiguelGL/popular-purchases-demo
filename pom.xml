@@ -42,8 +42,8 @@
     </developers>
 
     <scm>
-        <connection>https://github.com/MiguelGL/popular-purchases-demo.git</connection>
-        <developerConnection>git@github.com:MiguelGL/popular-purchases-demo.git</developerConnection>
+        <connection>scm:git:https://github.com/MiguelGL/popular-purchases-demo.git</connection>
+        <developerConnection>scm:git:git@github.com:MiguelGL/popular-purchases-demo.git</developerConnection>
         <url>https://github.com/MiguelGL/popular-purchases-demo</url>
     </scm>
 
