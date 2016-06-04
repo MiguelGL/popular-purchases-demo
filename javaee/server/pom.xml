@@ -8,7 +8,7 @@
     <parent>
         <groupId>com.mgl.demo.popularpurchases</groupId>
         <artifactId>popular-purchases-javaee-parent</artifactId>
-        <version>1.0.0.Final</version>
+        <version>1.0.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>popular-purchases-server</artifactId>
