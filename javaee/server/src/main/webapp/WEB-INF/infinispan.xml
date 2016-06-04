@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<is:infinispan
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xmlns:is='urn:infinispan:config:8.1'
+    xsi:schemaLocation='urn:infinispan:config:8.1 http://infinispan.org/schemas/infinispan-config-8.1.xsd'>
+</is:infinispan>

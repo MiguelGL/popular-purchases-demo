@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    
+    <name>Popular Purchases uService :: ---</name>
+
+    <groupId>com.mgl.demo.popularpurchases</groupId>
+    <artifactId>popular-purchases-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <guava.version>19.0</guava.version>
+
+        <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
+    </properties>
+
+    <modules>
+        <module>javaee</module>
+        <module>vertx</module>
+    </modules>
+
+    <dependencyManagement>
+        
+        <dependencies>
+            
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            
+        </dependencies>
+        
+    </dependencyManagement>
+
+    <build>
+
+        <pluginManagement>
+
+            <plugins>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+
+        </pluginManagement>
+
+    </build>
+
+
+</project>
