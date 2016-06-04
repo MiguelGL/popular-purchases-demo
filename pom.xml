@@ -22,6 +22,7 @@
         <guava.version>19.0</guava.version>
 
         <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
+        <versions-maven-plugin.version>2.2</versions-maven-plugin.version>
     </properties>
 
     <modules>
@@ -48,6 +49,7 @@
         <pluginManagement>
 
             <plugins>
+
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>${maven-compiler-plugin.version}</version>
@@ -56,6 +58,16 @@
                         <target>${maven.compiler.target}</target>
                     </configuration>
                 </plugin>
+
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>versions-maven-plugin</artifactId>
+                    <version>${versions-maven-plugin.version}</version>
+                    <configuration>
+                        <generateBackupPoms>false</generateBackupPoms>
+                    </configuration>
+                </plugin>
+
             </plugins>
 
         </pluginManagement>
